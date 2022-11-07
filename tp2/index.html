@@ -6,10 +6,9 @@
         <title>TP2</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" href="style.css">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
         <style>
           body{
               background-color: #e9ebee;              
@@ -18,6 +17,12 @@
               margin: 0 auto;
               max-width: 800px;              
           }
+          /*input[type="date"]::-webkit-inner-spin-button,
+          input[type="date"]::-webkit-calendar-picker-indicator {
+              display: none;
+              -webkit-appearance: none;
+          }*/
+          
         </style>
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
@@ -25,9 +30,56 @@
         <!--<script src="js/main.js"></script>-->
     </head>
     <body>        
-        <h1>tp2</h1>
+        <h2>TP#2</h1>
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+        <form name="myform" action="action.html" method="get">
+            <table>
+                <tr>
+                    <td><label for="nom">Nom</label></td>
+                    <td>
+                        <input type="text" minlength="2" maxlength="20" required name="nom" id="nom"/> 
+                        <span class="icon-ok ok">✔</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="prenom">Prenom</label></td>
+                    <td>
+                        <input type="text" minlength="2" maxlength="20" name="prenom" required id="prenom"/> 
+                        <span class="icon-ok ok">✔</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="date">Date de naissance</label></td>
+                    <td>
+                        <input type="date" name="date" id="date" required minlength="10" placeholder="JJ/MM/AAAA" /> 
+                        <span class="icon-ok ok">✔</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="adresse">Adresse</label></td>
+                    <td>
+                        <input type="text" minlength="5" maxlength="50" name="adresse" required id="adresse"/>
+                        <span class="icon-ok ok">✔</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Mail</label></td>
+                    <td>
+                        <input type="email" minlength="5" maxlength="35" required name="mail" id="mail"/> 
+                        <span class="icon-ok ok">✔</span>
+                    </td>
+                </tr><br/>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="btn-primary" value="Envoyer"></td>
+                </tr>
+            </table>
+        </form>
+        <div id="error">
+
+        </div>
+        <div id="resultat">
+
+        </div>
     </body>
 </html>
