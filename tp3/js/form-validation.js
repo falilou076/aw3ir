@@ -34,8 +34,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
       if (mm < 10) mm = '0' + mm;
 
       const formatage = yyyy + '-' + mm + '-' + dd;
-      console.log("aaaaaaaa:"+date)
-      if( formatage <= date || date == '' || date < 5)
+      if( formatage <= date || date == '')
         {
           document.querySelector(".modal-body").innerHTML = "La date doit etre logique";
           myModal.show();
