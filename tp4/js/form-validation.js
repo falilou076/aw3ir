@@ -5,14 +5,23 @@ if(loc){
     loc.addEventListener('click', getLocation);
 }
 
-function masquerMessage()
-{
-document.getElementById("message").setAttribute("style", "display:none;");
-}
+function masquerMessage(){document.getElementById("message").setAttribute("style", "display:none;");}
 
 function count_caracteres(id){
     value = document.querySelector(`#${id}`).value.length + 1;
     document.getElementById("span"+id).textContent = this.value + "car.";
+}
+
+function count_caracteres_inv(id){
+    let doc = document.getElementById(id)
+    doc.addEventListener('keydown', (e) => {
+        if (e.key === 'Delete' || e.key === 'Backspace'){
+            value = document.querySelector(`#${id}`).value.length - 1;
+            if(value == -1)
+                value = 0;
+            document.getElementById("span"+id).textContent = this.value + "car.";
+        }
+    });
 }
 
 function validateEmail() {

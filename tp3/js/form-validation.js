@@ -46,7 +46,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
     }
 
     function validateOthers(nom){
-      let name = document.getElementById(nom).value;
+      const name = document.getElementById(nom).value;
       if(name.length < 5 || name == ""){
         document.querySelector(".modal-body").innerHTML = "Le " + nom + " doit contenir minimum 5 caracteres";
         myModal.show();

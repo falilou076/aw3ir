@@ -50,7 +50,8 @@
                         <label for="nom" class="form-label col-form-label" ><b>Nom</b></label>
                     </div>
                     <div class="col-8 d-flex">
-                        <input type="text" onchange="validateOthers(this.id)" onkeypress="count_caracteres(this.id)" name="nom" class="form-control form-control" id="nom">
+                        <input type="text" 
+                        onchange="validateOthers(this.id)" onclick="count_caracteres_inv(this.id)" onkeypress="count_caracteres(this.id)" name="nom" class="form-control form-control" id="nom">
                         <span style="margin-left:10px; align-self: center;"></span>
                     </div>
                     <div id="spannom" class="col-1">
@@ -94,7 +95,7 @@
                         <span id="addr" style="margin-left:10px; align-self: center;"></span>
                     </div>  
                     <div class="col-2">
-                        <button type="button" class="btn btn-warning" id="gps">GPS</button>
+                        <button type="button" class="btn btn-warning" id="gps">📍GPS</button>
                     </div> 
                     <div id="spanadresse" class="col-1">
                         <span style="margin-left:10px; align-self: center;"></span>
