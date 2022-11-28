@@ -65,7 +65,7 @@
                         <label for="prenom" class="form-label col-form-label"><b>Prenom</b></label>
                     </div>
                     <div class="col-8 d-flex">
-                        <input type="text" onchange="validateOthers(this.id)" onkeypress="count_caracteres(this.id)"  name="prenom" class="form-control form-control" id="prenom">
+                        <input type="text" onchange="validateOthers(this.id)" onclick="count_caracteres_inv(this.id)" onkeypress="count_caracteres(this.id)"  name="prenom" class="form-control form-control" id="prenom">
                         <span style="margin-left:10px; align-self: center;"></span>
                     </div>
                     <div id="spanprenom" class="col-1">
@@ -91,7 +91,7 @@
                         <label for="adresse" class="form-label col-form-label"><b>Adresse</b></label>
                     </div>
                     <div class="col-6 d-flex">
-                        <input type="text" onchange="validateAdresse(this.id)" onkeypress="count_caracteres(this.id)" name="adresse" class="form-control form-control" id="adresse">
+                        <input type="text" onchange="validateAdresse(this.id)" onclick="count_caracteres_inv(this.id)" onkeypress="count_caracteres(this.id)" name="adresse" class="form-control form-control" id="adresse">
                         <span id="addr" style="margin-left:10px; align-self: center;"></span>
                     </div>  
                     <div class="col-2">
@@ -113,7 +113,7 @@
                         <label for="mail" class="form-label col-form-label"><b>Email</b></label>
                     </div>
                     <div class="col-8 d-flex">
-                        <input type="text" onchange="validateEmail()" onkeypress="count_caracteres(this.id)" name="mail" class="form-control form-control" id="mail">
+                        <input type="text" onchange="validateEmail()" onclick="count_caracteres_inv(this.id)" onkeypress="count_caracteres(this.id)" name="mail" class="form-control form-control" id="mail">
                         <span style="margin-left:10px; align-self: center;"></span>
                     </div>
                     <div id="spanmail" class="col-1">
