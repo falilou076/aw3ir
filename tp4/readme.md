@@ -117,6 +117,7 @@ function showError(error) {
 }
 ```
 
+
 2. Ajouter un bouton à coté du champ de saisie de l’adresse
 
 3. Dans votre script **form-validation.js** intercepter le click sur ce bouton et utiliser la fonction getLocation() pour demander la géolocalisation à l’utilisateur
