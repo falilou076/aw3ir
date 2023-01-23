@@ -108,6 +108,47 @@
                     </ul>        
                 </div>
             </div>
+
+            
+            <div class="margeT" v-if="city4Weather">
+
+                <div class="card" style="width: 18rem;" v-for="item in city4Weather" >
+                    <div class="card-header">
+                        {{item.name}} 
+                    </div>
+                    <img class="card-img-top" v-bind:src="url" alt="Card image cap">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{item.main.temp}}<i class="wi wi-celsius"></i>                            
+                        </h5>
+                        <p class="card-text">{{cityWeather.weather[0].description}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="wi wi-cloud"></i> Nuage: {{item.clouds.all}}%                            
+                        </li>
+                        <li class="list-group-item">
+                            <i class="wi wi-humidity"></i> Humidité: {{cityWeather.main.humidity}}%                           
+                        </li>
+                        <li class="list-group-item">
+                            <i class="wi wi-windy"></i> Vent: {{item.wind.speed}} km/h
+                        </li>
+                        <li class="list-group-item">
+                            <i class="wi wi-sunrise"></i> 
+                            Levé du soleil: {{new Date(item.sys.sunrise * 1000).toLocaleTimeString([], {timeStyle: 'short'})}}
+                        </li>
+                        <li class="list-group-item">
+                            <i class="wi wi-sunset"></i>
+                            Couché du soleil: {{new Date(item.sys.sunset * 1000).toLocaleTimeString([], {timeStyle: 'short'})}}
+                        </li>
+                    </ul>        
+                </div>
+            </div>
+            
+
+
+
             <div class="margeT" v-if="loaded">
                 <span class="badge bg-success">Application chargée.</span>
             </div>

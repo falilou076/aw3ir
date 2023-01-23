@@ -21,6 +21,9 @@ window.onload = function () {
             // cityWeather contiendra les données météo reçus par openWeatherMap
             cityWeather : null,
 
+             // cityWeather contiendra les données météo reçus par openWeatherMap sur 4 jours
+             city4Weather : null,
+
             // indicateur de chargement
             cityWeatherLoading : false
         },
@@ -71,6 +74,36 @@ window.onload = function () {
             remove: function (_city) {      
                 this.cityList = this.cityList.filter(item => item.name != _city.name);        
             }, 
+            meteo4date: function (_city){
+                 // appel AJAX avec fetch
+                 fetch('https://api.openweathermap.org/data/2.5/forecast/?q='+ _city.name +'&lang=fr&appid=0ada432b59deb9716c357092c5f79be6')
+                 .then(function(response) {
+                     return response.json();
+                 })
+                 .then(function(json) {
+                     
+                     // test du code retour
+                     // 200 = OK
+                     // 404 = city not found 
+                     if(json.cod === "200"){
+                         // on met la réponse du webservice dans la variable cityWeather
+                         jsonFil=[]
+                         json.list.forEach((element) => {
+                            if(json.list.indexOf(element)%8 == 0){
+                                jsonFil.push(element);
+                            }
+                         })
+                         console.log(jsonFil);
+                         app.city4Weather = jsonFil;
+                         app.message = null;
+                     }
+                     else{
+                         app.city4Weather = null;
+                         app.message = 'Météo introuvable pour ' + _city.name 
+                                         + ' (' + json.message+ ')';
+                     }        
+                 });  
+            },
             meteo: function (_city) {  
                 this.cityWeatherLoading = true;
 

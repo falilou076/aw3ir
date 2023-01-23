@@ -53,7 +53,7 @@
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" *ngIf="meteo && meteo.cod === 200">
       <div class="card col mb-4 mt-4" style="padding: 0px;" *ngFor="let element of meteos">
         <div class="card-header">
-          {{meteo.name}} <img id="wicon" src="http://openweathermap.org/img/w/{{element.weather[0].icon}}.png" alt="Weather icon">
+          {{meteo.name}}, à {{element.dt_txt | date: 'HH:mm'}} <img id="wicon" src="http://openweathermap.org/img/w/{{element.weather[0].icon}}.png" alt="Weather icon">
         </div>
          <div class="card-body">
         <h5 class="card-title">
@@ -61,7 +61,7 @@
           {{element.main.temp}}
           <i class="wi wi-celsius"></i>
         </h5>
-        <p class="card-text">{{element.weather[0].description}}</p>
+        <p class="card-text">{{element.weather[0].description}}</p>        
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
